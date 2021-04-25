@@ -1,0 +1,21 @@
+<style>
+    div {
+        border-right: 1px solid #ccc; /* 光标 */
+        width: 5em; /* 5个字的宽度 */
+        white-space: nowrap; /* 不换行 */
+        overflow: hidden; /* 溢出内容裁剪 */
+        /** step(5, end)，直接跳到5个居中状态，省略过渡 step-end 直接跳到最终状态 **/
+        animation: type 3s steps(5, end), cursor .5s step-end infinite alternate;
+      }
+      @keyframes type {
+        0% {
+          width: 0;
+        }
+      }
+      @keyframes cursor {
+        50% {
+          border-color: transparent;
+        }
+      }
+    </style>
+<div>打字机效果</div>

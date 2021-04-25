@@ -1,0 +1,36 @@
+<style>
+    div * { /* bad case */
+    font-size: 12px;
+    }
+    div { /* good case */
+    font-size: 12px;
+    }
+</style>
+     
+<div>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+</div>
+
+<!-- 
+CSS 属性分为非继承属性和 继承属性，继承属性的默认值为父元素的该属性的 计算值，非继承属性和根元素的继承属性的默认值为初始值。
+
+对于非继承属性，可以显示的声明属性值为 inherit，让子元素的属性继承父元素。
+ 
+  -->
+
+<!-- 常见的继承属性：
+
+字体 font 系列
+文本 text-align text-ident line-height letter-spacing
+颜色 color
+列表 list-style
+可见性 visibility
+光标 cursor -->
+ 
+<!-- 
+容易被误认为继承属性的 非继承属性：
+
+透明度 opacity
+背景 background系列 -->

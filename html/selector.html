@@ -1,0 +1,113 @@
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+
+</style>
+ 
+<table>
+    <tr>
+        <td>选择器</td>
+        <td> 1000</td>
+    </tr>
+    <tr>
+        <td> 通配符选择器</td>
+        <td> *</td>
+    </tr>
+    <tr>
+        <td> ID选择器</td>
+        <td> #id </td>
+    </tr>
+    <tr>
+        <td> 类选择器</td>
+        <td> .class </td>
+    </tr>
+    <tr>
+        <td> 元素选择器</td>
+        <td> div </td>
+    </tr>
+    <tr>
+        <td> 属性选择器</td>
+        <td> 	[attr="value"] </td>
+    </tr>
+    <tr>
+        <td> 伪类选择器</td>
+        <td> a:hover</td>
+    </tr>
+    <tr>
+        <td> 伪元素选择器</td>
+        <td> a::before </td>
+    </tr>
+</table> 
+<!-- 
+命名规则
+
+大小写字母，数字，连字符（-），下划线（_）以及 ISO 10646 字符编码 U+00A1 及以上
+
+不能以数字、连字符（-）开头
+类名或 ID 以数字、连字符（-）开头.或#后加\3
+ID 选择器以一个（#）开头
+类选择器以一个（.）开头 -->
+ 
+
+
+<!-- 
+CSS 选择器效率从高到底：
+ID > 类 > 类型（标签） > 相邻 > 子代 > 后代 > 通配符 > 属性 > 伪类
+
+CSS 选择器的读取顺序：从右到左，逐级匹配 -->
+
+
+<!-- 子代选择器和后代选择器 -->
+
+<!-- 语法：
+元素1 > 元素2 {样式声明 } 
+-->
+
+<style> 
+span { background-color: white; }
+div > span {
+  background-color: DodgerBlue;
+}
+</style>
+<div>
+    <span>Span 1. In the div.
+      <span>Span 2. In the span that's in the div.</span>
+    </span>
+  </div>
+<span>Span 3. Not in a div at all</span>
+
+
+<!-- 后代选择器
+
+selector1 selector2 {
+  /* property declarations */
+}
+
+
+-->
+
+li {
+    list-style-type: disc;
+  }
+  
+  li li {
+    list-style-type: circle;
+  }
+
+<ul>
+    <li>
+      <div>Item 1</div>
+      <ul>
+        <li>Subitem A</li>
+        <li>Subitem B</li>
+      </ul>
+    </li>
+    <li>
+      <div>Item 2</div>
+      <ul>
+        <li>Subitem A</li>
+        <li>Subitem B</li>
+      </ul>
+    </li>
+  </ul>

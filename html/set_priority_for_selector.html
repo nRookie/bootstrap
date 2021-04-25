@@ -1,0 +1,56 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<body> 
+我们将 CSS 选择器优先级量化为权重，为不同类型的 CSS 选择器设置初始权重。
+<br/>
+
+选择器的组合，即初始权重的累加。累加值越高，优先级越高。
+<br/>
+<h1>初始权重：</h1> 
+
+<table>
+    <tr>
+      <th>选择器</th>
+      <th>权重</th>
+    </tr>
+    <tr>
+      <td>行间 $style=""属性</td>
+      <td> 1000</td>
+    </tr>
+    <tr>
+        <td>ID选择器</td>
+        <td> 100</td>
+      </tr>
+      <tr>
+        <td>类、属性、伪类</td>
+        <td> 10</td>
+      </tr>
+      <tr>
+        <td>类型（标签）、伪元素</td>
+        <td> 1</td>
+      </tr>
+</table>
+</body>
+
+
+<style>
+    div { /* 优先级 1 */
+    color: red;
+    }
+    div.c { /* 优先级 1 + 10 = 11 */
+    color: gray;
+    }
+    .c.c.c.c.c.c.c.c.c.c.c { /* 优先级 10 * 11 = 110，不进位，90 */
+    color: blue;
+    }
+    #id { /* 优先级 100 */
+    color: yellow
+    }
+    </style>
+    <div>红字</div>
+    <div class="c">蓝字</div>
+    <div id="id" class="c">黄字</div>
+ 

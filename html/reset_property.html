@@ -1,0 +1,36 @@
+<!-- 属性值initial可以将属性设为W3C规范初始值
+
+属性all可以将元素的所有属性重置
+
+在规范之外，浏览器还会为部分元素，如表单元素设置默认样式
+
+属性的值来源于开发者定义，用户配置和浏览器默认
+
+all:initial相当于清空了用户配置和浏览器默认样式
+
+工作中，我们更希望重置到默认样式，而不是清空它们
+
+all:revert属性还原。可以将子元素的属性重置按如下规则重置：
+
+继承属性：重置到父元素的属性值
+非继承属性或父元素继承属性都未设置：重置到用户配置和浏览器默认属性
+  -->
+
+<style>
+button {
+color: yellow;
+border: 1px solid red;
+background-color: red;
+}
+button:nth-of-type(2) {
+all: initial; /* 清空按钮的样式 */
+color: blue;
+}
+button:last-of-type {
+all: revert; /* 保留按钮的默认样式 */
+color: blue;
+}
+</style>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>

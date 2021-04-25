@@ -1,0 +1,19 @@
+<html> 
+<style>
+    div { /* All */
+ 
+    max-width: 500px; /* IE7+ */
+    color: black; /* IE6 黑 */
+    }
+    p + div { /* IE7+ */
+    color: blue; /* IE7 - IE8 蓝 */
+    }
+    :not(p) { /* IE9+ */
+    color: red; /* IE9+ 红 */
+    -webkit-font-smoothing: antialiased; /* Webkit浏览器 MacOS 平滑文字 */
+    -moz-osx-font-smoothing: grayscale; /* 火狐浏览器 MacOS 平滑文字 */
+    }
+</style>
+    <p>p</p>
+<div>div</div>
+</html>
